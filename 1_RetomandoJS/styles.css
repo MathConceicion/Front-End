@@ -1,0 +1,155 @@
+:root {
+    --cor-primaria: #454545;
+    --cor-secundaria: #ff0084;
+    --cor-terciaria: #a22365;
+    --cor-destaque: #d11174;
+    --cor-accent: #743455;
+    --cor-fundo: #faf4f7;
+    --cor-texto: #454545;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'SN Pro', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(209, 17, 116, 0.15);
+    border-radius: 8px;
+    border-left: 4px solid var(--cor-secundaria);
+}
+
+h1 {
+    text-align: center;
+    color: var(--cor-primaria);
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #f0e0ec;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#taskInput:focus {
+    outline: none;
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 8px rgba(255, 0, 132, 0.25);
+}
+
+#addTaskButton {
+    padding: 10px 20px;
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+#addTaskButton:hover {
+    background-color: var(--cor-destaque);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 0, 132, 0.35);
+}
+
+.listcss ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.listcss li {
+    background-color: #f0e0ec;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.listcss li:hover {
+    background-color: #e0c0d8;
+}
+
+.listcss button {
+    background-color: var(--cor-secundaria);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex-shrink: 0;
+}
+
+.listcss button:hover {
+    background-color: var(--cor-destaque);
+}
+
+/* ================================ */
+/* ESTILO PARA TAREFAS CONCLUÍDAS */
+/* ================================ */
+
+.listcss li.concluida {
+    background-color: #f5e8f5;
+    opacity: 0.75;
+}
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    flex-shrink: 0;
+    accent-color: var(--cor-secundaria);
+    border: 2px solid var(--cor-destaque);
+}
+
+.task-text {
+    flex: 1;
+    word-break: break-word;
+    transition: text-decoration 0.3s, color 0.3s;
+}
+
+.listcss li.concluida .task-text {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.btn-delete {
+    background-color: var(--cor-secundaria);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: var(--cor-destaque);
+}
