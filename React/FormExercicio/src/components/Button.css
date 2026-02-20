@@ -1,0 +1,73 @@
+:root {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --submit-color: #833256;
+      --submit-hover: #ad597b;
+      --submit-active: #5a0c31;
+      --reset-color: #95a5a6;
+      --reset-hover: #7f8c8d;
+      --reset-active: #6b7778;
+      --disabled-color: #bdc3c7;
+}
+
+.button-container {
+      display: flex;
+      gap: 14px;
+      margin-top: 25px;
+      justify-content: center;
+}
+
+.btn {
+      flex: 1;
+      max-width: 200px;
+      padding: 13px 28px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-submit {
+      background-color: var(--submit-color);
+      color: white;
+}
+
+.btn-submit:hover:not(:disabled) {
+      background-color: var(--submit-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(131, 50, 86, 0.3);
+}
+
+.btn-submit:active:not(:disabled) {
+      background-color: var(--submit-active);
+      transform: translateY(0);
+}
+
+.btn-submit:disabled {
+      background-color: var(--disabled-color);
+      color: #000000;
+      cursor: not-allowed;
+      opacity: 0.7;
+      box-shadow: none;
+      transform: none;
+}
+
+.btn-reset {
+      background-color: var(--reset-color);
+      color: white;
+}
+
+.btn-reset:hover {
+      background-color: var(--reset-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-reset:active {
+      background-color: var(--reset-active);
+      transform: translateY(0);
+}
