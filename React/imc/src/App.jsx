@@ -1,13 +1,11 @@
-import ImcCalc from "./components/imcCalc";
-import ImcTable from "./components/imcTable";
+import ImcTable from "./Components/ImcTable";
 import { data } from "./data/data";
 import { useState } from "react";
 import "./App.css"
+import ImcCalc from "./Components/imcCalc";
 
-//App vai gerenciar todos noso componentes
 function App() {
 
-  // 11.  Calculando IMC
   const calcImc = (e, height, weight) => {
     e.preventDefault();
 
@@ -31,7 +29,6 @@ function App() {
   };
 
 
-  // 12. Função de resetar calculadora
   const resetCalc = (e) => {
     setImc("");
     setInfo("");
@@ -45,7 +42,6 @@ function App() {
 
   return (
     <div className="container">
-      {/* Na primeira parte ir até os parentes amarelo */}
       {!imc ? (<ImcCalc calcImc={calcImc} />) : <ImcTable data={data} imc={imc} info={info} infoClass={infoClass} resetCalc={resetCalc} />}
     </div>
   )

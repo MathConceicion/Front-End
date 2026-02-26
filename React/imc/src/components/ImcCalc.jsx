@@ -1,63 +1,61 @@
 import Button from "./Button.jsx"
-import { useState } from "react";
-import "./imcCalc.css"
+import "./ImcCalc.css"
+import { useState } from "react"
 
-const imcCalc = ({ calcImc }) => {
-      const [height, setHeight] = useState("");
-      const [weight, setWeight] = useState("");
+const ImcCalc = ({ calcImc }) => {
+
+      const [height, setHeight] = useState();
+      const [weight, setWeight] = useState();
 
       const clearForms = (e) => {
-            e.preventDefault()
-            // Limpa os campos de altura e peso
+            e.preventDefault();
+
             setHeight("");
             setWeight("");
-      }
+      };
 
-      // validar somente números
+      // 10. Validar dados, só números e virgula
       const validDigits = (text) => {
-            return text.replace(/[^0-9,]/g, "");
+            return text.replace(/[^0-9,]/g, "")
       }
 
       const handleHeightChange = (e) => {
-            const updateValue = validDigits(e.target.value);
-            setHeight(updateValue);
-      }
+            const updatedValue = validDigits(e.target.value)
+            setHeight(updatedValue)
+      };
 
       const handleWeightChange = (e) => {
-            const updateValue = validDigits(e.target.value);
-            setWeight(updateValue);
-      }
+            const updatedValue = validDigits(e.target.value)
+            setWeight(updatedValue)
+      };
 
       return (
             <div id="calc-container">
                   <h2>Calculadora de IMC</h2>
-                  <form className="imc-form">
-                        <div id="form-inputs">
-                              {/* Altura */}
+                  <form id="imc-form">
+                        <div className="form-inputs">
                               <div className="form-control">
                                     <label htmlFor="height">Altura: </label>
                                     <input type="text"
                                           name="height"
                                           id="height"
-                                          placeholder="Exemplo: 1,68"
-                                          value={height}
-                                          onChange={(e) => handleHeightChange(e)} />
+                                          placeholder="Exemplo 1,75"
+                                          // onChange={(e) => setHeight(e.target.value)}
+                                          onChange={(e) => handleHeightChange(e)}
+                                          value={height} />
                               </div>
-
-                              {/* Peso */}
                               <div className="form-control">
                                     <label htmlFor="weight">Peso: </label>
                                     <input type="text"
                                           name="weight"
-                                          id="weight"
-                                          placeholder="Exemplo: 70,5"
-                                          value={weight}
-                                          onChange={(e) => handleWeightChange(e)} />
+                                          id="weight" placeholder="Exemplo 70,5"
+                                          // onChange={(e) => setWeight(e.target.value)}
+                                          onChange={(e) => handleWeightChange(e)}
+                                          value={weight} />
                               </div>
                         </div>
-
                         <div className="action-control">
-                              <Button id="calc-btn" text="Calcular" action={(e) => calcImc(e, weight, height)} />
+                              <Button id="calc-btn" text="Calcular" action={(e) => calcImc(e, height, weight)} />
                               <Button id="clear-btn" text="Limpar" action={clearForms} />
                         </div>
                   </form>
@@ -65,4 +63,4 @@ const imcCalc = ({ calcImc }) => {
       )
 }
 
-export default imcCalc
+export default ImcCalc
